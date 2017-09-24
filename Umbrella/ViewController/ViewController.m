@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import <GooglePlaces/GooglePlaces.h>
+#import "Forecast.h"
 
 
 @interface ViewController ()
 
 @property NSArray *address;
+@property NSMutableArray *daysForecast;
 @property (weak, nonatomic) IBOutlet UILabel *cityLBL;
 @property (weak, nonatomic) IBOutlet UILabel *tempLBL;
 @property (weak, nonatomic) IBOutlet UILabel *conditionLBL;
@@ -27,6 +29,8 @@
     [super viewDidLoad];
     
     _client = [APIWebService new];
+    _daysForecast = [[NSMutableArray alloc]init];
+
     
     _resultsViewController = [[GMSAutocompleteResultsViewController alloc] init];
     _resultsViewController.delegate = self;
@@ -55,7 +59,13 @@
     if ([_address count] > 1) {
         [_client getTemparatures:_address[0] respectiveState:_address[1] onSuccess:^(NSDictionary *dictionary) {
             NSArray *objects = dictionary[@"hourly_forecast"];
-            NSLog(@"%@", objects);
+            if ([objects count] > 0) {
+                for (NSDictionary *dictionary in objects) {
+                    [self.daysForecast addObject:[[Forecast alloc]initWithDictionary: dictionary]];
+                }
+            }else {
+                [self showAlertWithMessage:@"No Data present in API"];
+            }
         } onError:^(NSError *error) {
             [self showAlertWithMessage:error.description];
         }];
