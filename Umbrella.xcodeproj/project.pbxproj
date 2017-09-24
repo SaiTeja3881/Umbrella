@@ -13,6 +13,7 @@
 		93DE95241F77F25C00811983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DE95231F77F25C00811983 /* Assets.xcassets */; };
 		93DE95271F77F25C00811983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DE95251F77F25C00811983 /* LaunchScreen.storyboard */; };
 		93DE952A1F77F25C00811983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE95291F77F25C00811983 /* main.m */; };
+		93DE95341F78167000811983 /* APIWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE95331F78167000811983 /* APIWebService.m */; };
 		BB214014B3001D4323A260FA /* libPods-Umbrella.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6E3D1B64514BA60120572 /* libPods-Umbrella.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		93DE95261F77F25C00811983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93DE95281F77F25C00811983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93DE95291F77F25C00811983 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93DE95321F78167000811983 /* APIWebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIWebService.h; sourceTree = "<group>"; };
+		93DE95331F78167000811983 /* APIWebService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIWebService.m; sourceTree = "<group>"; };
 		9FA6E3D1B64514BA60120572 /* libPods-Umbrella.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Umbrella.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A038D8F8BD46CFF9A62BB8F4 /* Pods-Umbrella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +77,7 @@
 		93DE95191F77F25C00811983 /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
+				93DE95311F78164F00811983 /* Client */,
 				93DE951A1F77F25C00811983 /* AppDelegate.h */,
 				93DE951B1F77F25C00811983 /* AppDelegate.m */,
 				93DE95301F7800A400811983 /* ViewController */,
@@ -93,6 +97,15 @@
 				93DE951E1F77F25C00811983 /* ViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		93DE95311F78164F00811983 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				93DE95321F78167000811983 /* APIWebService.h */,
+				93DE95331F78167000811983 /* APIWebService.m */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		958B45265D7CD4C63973794F /* Frameworks */ = {
@@ -228,6 +241,7 @@
 				93DE951F1F77F25C00811983 /* ViewController.m in Sources */,
 				93DE952A1F77F25C00811983 /* main.m in Sources */,
 				93DE951C1F77F25C00811983 /* AppDelegate.m in Sources */,
+				93DE95341F78167000811983 /* APIWebService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

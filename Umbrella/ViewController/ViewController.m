@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 
+@property NSArray *address;
 @property (weak, nonatomic) IBOutlet UILabel *cityLBL;
 @property (weak, nonatomic) IBOutlet UILabel *tempLBL;
 @property (weak, nonatomic) IBOutlet UILabel *conditionLBL;
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _client = [APIWebService new];
     
     _resultsViewController = [[GMSAutocompleteResultsViewController alloc] init];
     _resultsViewController.delegate = self;
@@ -45,6 +48,20 @@
     _searchController.active = NO;
     self.searchController.searchBar.text = place.formattedAddress;
     
+    // Do something with the selected place.
+    _address = (NSArray*)[place.formattedAddress componentsSeparatedByString:@","];
+    NSLog(@"%@", _address);
+
+    if ([_address count] > 1) {
+        [_client getTemparatures:_address[0] respectiveState:_address[1] onSuccess:^(NSDictionary *dictionary) {
+            NSArray *objects = dictionary[@"hourly_forecast"];
+            NSLog(@"%@", objects);
+        } onError:^(NSError *error) {
+            [self showAlertWithMessage:error.description];
+        }];
+    } else {
+        [self showAlertWithMessage:@"Please search by ZipCode"];
+    }
 }
 
 - (void)resultsController:(GMSAutocompleteResultsViewController *)resultsController
@@ -70,5 +87,15 @@ didFailAutocompleteWithError:(NSError *)error {
     // Dispose of any resources that can be recreated.
 }
 
+-(void)showAlertWithMessage: (NSString*)errorMsg {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message: errorMsg preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:actionOk];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:alert animated:true completion:nil];
+    });
+}
 
 @end

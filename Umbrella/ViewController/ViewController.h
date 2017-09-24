@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 @import GooglePlaces;
-
+#import "APIWebService.h"
 
 @interface ViewController : UIViewController
 
 @property GMSAutocompleteResultsViewController *resultsViewController;
 
 @property UISearchController *searchController;
+
+@property APIWebService *client;
 
 @end
 
