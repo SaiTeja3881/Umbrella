@@ -2,8 +2,8 @@
 //  Forecast.m
 //  Umbrella
 //
-//  Created by Saiteja Alle on 9/24/17.
-//  Copyright © 2017 Saiteja Alle. All rights reserved.
+//  Created by Sai Tejs on 9/24/17.
+//  Copyright © 2017 Sai Teja. All rights reserved.
 //
 
 #import "Forecast.h"
