@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@import GooglePlaces;
+
 
 @interface ViewController : UIViewController
+
+@property GMSAutocompleteResultsViewController *resultsViewController;
+
+@property UISearchController *searchController;
 
 @end
 
