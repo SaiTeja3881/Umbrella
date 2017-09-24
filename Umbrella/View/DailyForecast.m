@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UILabel *timeOfDay;
 @property (nonatomic, strong) UILabel *temparature;
 @property (nonatomic, strong) UIImageView *icon;
-@property (nonatomic, strong) UIView *lineView;
 @property (nonatomic) BOOL needsTopBorder;
 
 @end
@@ -42,10 +41,6 @@
         self.temparature.text = @"98° / 86°";
         [self addSubview:self.temparature];
         
-        self.lineView = [[UIView alloc]init];
-        self.lineView.backgroundColor = [UIColor whiteColor];
-        [self addSubview:self.lineView];
-        
         self.backgroundColor = [UIColor colorWithRed:(30.0/255.0) green:(178.0/255.0) blue:(205.00/255.0) alpha:1.0];
     }
     return self;
@@ -55,12 +50,11 @@
     self.timeOfDay.frame = CGRectMake(0, 20, CGRectGetWidth(self.frame), 20);
     self.icon.frame = CGRectMake(37, 50, 50, 50);
     self.temparature.frame = CGRectMake(0, 110, CGRectGetWidth(self.frame), 40);
-    self.lineView.frame = CGRectMake(43, 102, 45, 1);
 }
 
-- (void)configureBlock:(Forecast*)forecast index:(float)index withHelper:(HelperClass*)helper {
+- (void)configureBlock:(Forecast*)forecast index:(float)index withColor:(UIColor*)color {
     
-    self.backgroundColor = [self colorForDay:forecast withHelper:helper];
+    self.backgroundColor = color;
     self.needsTopBorder = TRUE;
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -87,15 +81,6 @@
     });
 }
 
--(UIColor*)colorForDay: (Forecast*)day withHelper:(HelperClass*)helper {
-    UIColor *color;
-    if (helper.highTemp == [day.temp intValue]) {
-        color = [UIColor orangeColor];
-    } else if ([day.temp intValue] == helper.lowTemp) {
-        color = [UIColor colorWithRed:0.5 green:0.8 blue:0.8 alpha:1.0];
-    }
-    return color;
-}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

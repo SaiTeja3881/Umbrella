@@ -14,6 +14,6 @@
 
 @property int highTemp;
 
-- (void)configureBlock:(Forecast*)forecast index:(float)index withHelper:(HelperClass*)helper;
+- (void)configureBlock:(Forecast*)forecast index:(float)index withColor:(UIColor*)color;
 
 @end
