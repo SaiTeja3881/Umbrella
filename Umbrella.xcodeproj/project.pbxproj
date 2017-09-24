@@ -13,9 +13,11 @@
 		93DE95241F77F25C00811983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DE95231F77F25C00811983 /* Assets.xcassets */; };
 		93DE95271F77F25C00811983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DE95251F77F25C00811983 /* LaunchScreen.storyboard */; };
 		93DE952A1F77F25C00811983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE95291F77F25C00811983 /* main.m */; };
+		BB214014B3001D4323A260FA /* libPods-Umbrella.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6E3D1B64514BA60120572 /* libPods-Umbrella.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B7328508A053B2D333A5E48 /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		93DE95171F77F25C00811983 /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DE951A1F77F25C00811983 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93DE951B1F77F25C00811983 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		93DE95261F77F25C00811983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93DE95281F77F25C00811983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93DE95291F77F25C00811983 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FA6E3D1B64514BA60120572 /* libPods-Umbrella.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Umbrella.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A038D8F8BD46CFF9A62BB8F4 /* Pods-Umbrella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB214014B3001D4323A260FA /* libPods-Umbrella.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AA6877EC6CBBD03A725781D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A038D8F8BD46CFF9A62BB8F4 /* Pods-Umbrella.debug.xcconfig */,
+				8B7328508A053B2D333A5E48 /* Pods-Umbrella.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		93DE950E1F77F25C00811983 = {
 			isa = PBXGroup;
 			children = (
 				93DE95191F77F25C00811983 /* Umbrella */,
 				93DE95181F77F25C00811983 /* Products */,
+				8AA6877EC6CBBD03A725781D /* Pods */,
+				958B45265D7CD4C63973794F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +76,7 @@
 			children = (
 				93DE951A1F77F25C00811983 /* AppDelegate.h */,
 				93DE951B1F77F25C00811983 /* AppDelegate.m */,
-				93DE951D1F77F25C00811983 /* ViewController.h */,
-				93DE951E1F77F25C00811983 /* ViewController.m */,
+				93DE95301F7800A400811983 /* ViewController */,
 				93DE95201F77F25C00811983 /* Main.storyboard */,
 				93DE95231F77F25C00811983 /* Assets.xcassets */,
 				93DE95251F77F25C00811983 /* LaunchScreen.storyboard */,
@@ -71,6 +86,23 @@
 			path = Umbrella;
 			sourceTree = "<group>";
 		};
+		93DE95301F7800A400811983 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				93DE951D1F77F25C00811983 /* ViewController.h */,
+				93DE951E1F77F25C00811983 /* ViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		958B45265D7CD4C63973794F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6E3D1B64514BA60120572 /* libPods-Umbrella.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93DE952D1F77F25C00811983 /* Build configuration list for PBXNativeTarget "Umbrella" */;
 			buildPhases = (
+				C1E441B19777F7AB8540BC5C /* [CP] Check Pods Manifest.lock */,
 				93DE95131F77F25C00811983 /* Sources */,
 				93DE95141F77F25C00811983 /* Frameworks */,
 				93DE95151F77F25C00811983 /* Resources */,
+				6FF1E608B3D08202E7162094 /* [CP] Embed Pods Frameworks */,
+				F0EC761373A5CA7C1019B1A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6FF1E608B3D08202E7162094 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1E441B19777F7AB8540BC5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0EC761373A5CA7C1019B1A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93DE95131F77F25C00811983 /* Sources */ = {
@@ -276,6 +359,7 @@
 		};
 		93DE952E1F77F25C00811983 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A038D8F8BD46CFF9A62BB8F4 /* Pods-Umbrella.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +375,7 @@
 		};
 		93DE952F1F77F25C00811983 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B7328508A053B2D333A5E48 /* Pods-Umbrella.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
