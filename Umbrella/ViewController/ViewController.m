@@ -10,6 +10,12 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *cityLBL;
+@property (weak, nonatomic) IBOutlet UILabel *tempLBL;
+@property (weak, nonatomic) IBOutlet UILabel *conditionLBL;
+@property (weak, nonatomic) IBOutlet UIScrollView *todayScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *tomorrowScrollView;
+
 @end
 
 @implementation ViewController
